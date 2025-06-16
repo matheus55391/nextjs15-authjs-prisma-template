@@ -4,6 +4,7 @@ import { UserHeader } from "@/components/user/user-header";
 import { PostFormWrapper } from "@/components/post/post-form-wrapper";
 import { PostListWrapper } from "@/components/post/post-list-wrapper";
 import { usePosts } from "@/hooks/use-posts";
+import LoginPage from "./login/page";
 
 export default async function Home() {
   const session = await auth();
@@ -22,5 +23,5 @@ export default async function Home() {
       </div>
     )
   }
-  return <SignInCard />;
+  return <LoginPage/>;
 }
