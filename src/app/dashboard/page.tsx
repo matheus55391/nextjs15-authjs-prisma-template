@@ -115,7 +115,7 @@ export default async function DashboardPage() {
   const session = await auth();
   const user = session?.user
   return (
-    <div className="flex flex-1 flex-row min-h-screen bg-background">
+    <div className="flex flex-1 flex-row max-h-screen min-h-screen bg-background">
       {/* Desktop Sidebar */}
       <div className="hidden md:block">
         <Sidebar user={user} />
@@ -125,7 +125,7 @@ export default async function DashboardPage() {
       <TopBar user={user} />
 
       {/* Main Content */}
-      <div className="mx-auto flex">
+      <div className="mx-auto flex overflow-y-scroll ">
         {/* Feed */}
         <main className="flex-1 max-w-2xl">
             <div className="bg-background/95 backdrop-blur  p-4 hidden  md:flex items-center justify-center">
@@ -133,7 +133,7 @@ export default async function DashboardPage() {
             </div>
             {user && <CreatePost user={user} />}
 
-          <div className="divide-y">
+          <div className="bg-primary-foreground ">
             {mockPosts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}

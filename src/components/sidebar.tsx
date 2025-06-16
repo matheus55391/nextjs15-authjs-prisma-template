@@ -45,10 +45,6 @@ export function Sidebar({ user }: SidebarProps) {
           </Button>
         ))}
 
-        <Button className="w-full mt-6 h-12 text-base">
-          <Plus className="h-5 w-5 mr-2" />
-          Novo Post
-        </Button>
       </nav>
 
       {/* User Profile */}
@@ -57,7 +53,7 @@ export function Sidebar({ user }: SidebarProps) {
           <UserProfile user={user} /> :
           <div className="border-t pt-4">
             <Link href="/login">
-              <Button variant="secondary" className="w-full justify-center h-10 mt-2">
+              <Button  className="w-full justify-center h-10 mt-2">
                 Entrar
               </Button>
             </Link>

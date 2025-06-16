@@ -53,10 +53,16 @@ export function MobileNav({ user }: MobileNavProps) {
                 </Button>
               ))}
 
-              <Button className="w-full mt-6 h-12 text-base">
-                <Plus className="h-5 w-5 mr-2" />
-                Novo Post
-              </Button>
+              {user ? (
+                <Button className="w-full mt-6 h-12 text-base">
+                  <Plus className="h-5 w-5 mr-2" />
+                  Novo Post
+                </Button>
+              ) : (
+                <Button asChild className="w-full mt-6 h-12 text-base">
+                  <a href="/login">Entrar</a>
+                </Button>
+              )}
             </nav>
 
             {/* User Profile */}

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, Hash } from "lucide-react"
+import SuggestedUsers from "./suggested-users"
 
 const trendingTopics = [
   { tag: "nextjs15", posts: "2.1k posts" },
@@ -62,28 +63,7 @@ export function TrendingSidebar() {
       </Card>
 
       {/* Suggested Users */}
-      <Card>
-        <CardHeader className="pb-3">
-          <CardTitle className="text-lg">Quem seguir</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {suggestedUsers.map((user) => (
-            <div key={user.username} className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-muted"></div>
-                <div>
-                  <p className="font-medium text-sm">{user.name}</p>
-                  <p className="text-xs text-muted-foreground">@{user.username}</p>
-                  <p className="text-xs text-muted-foreground">{user.bio}</p>
-                </div>
-              </div>
-              <Button size="sm" variant="outline">
-                Seguir
-              </Button>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
+      <SuggestedUsers/>
     </div>
   )
 }
