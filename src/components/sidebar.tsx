@@ -23,7 +23,7 @@ const navigationItems = [
 
 export function Sidebar({ user }: SidebarProps) {
   return (
-    <div className="fixed left-0 top-0 h-full w-64 border-r bg-background p-4 flex flex-col">
+    <div className="flex flex-col h-full w-64 border-r bg-background p-4">
       {/* Logo/Brand */}
       <div className="flex items-center gap-2 mb-8 px-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">

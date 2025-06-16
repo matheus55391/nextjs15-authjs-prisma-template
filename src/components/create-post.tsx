@@ -19,7 +19,7 @@ export function CreatePost({ user }: CreatePostProps) {
   const [code, setCode] = useState("")
 
   return (
-    <Card className="border-0 border-b rounded-none">
+    <Card className="border-0 border-b rounded-t-2xl rounded-b-none">
       <CardContent className="p-4">
         <div className="flex gap-3">
           <Avatar className="h-10 w-10">

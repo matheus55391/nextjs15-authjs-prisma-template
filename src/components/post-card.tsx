@@ -27,7 +27,7 @@ interface PostCardProps {
 
 export function PostCard({ post }: PostCardProps) {
   return (
-    <Card className="border-0 border-b rounded-none">
+    <Card className="border-0 border-b rounded-none ">
       <CardContent className="p-4">
         <div className="flex gap-3">
           <Avatar className="h-10 w-10">

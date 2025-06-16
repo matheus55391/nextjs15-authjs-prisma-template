@@ -115,7 +115,7 @@ export default async function DashboardPage() {
   const session = await auth();
   const user = session?.user
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex flex-1 flex-row min-h-screen bg-background">
       {/* Desktop Sidebar */}
       <div className="hidden md:block">
         <Sidebar user={user} />
@@ -125,10 +125,10 @@ export default async function DashboardPage() {
       <TopBar user={user} />
 
       {/* Main Content */}
-      <div className="md:ml-64 flex">
+      <div className="mx-auto flex">
         {/* Feed */}
-        <main className="flex-1 max-w-2xl border-r">
-            <div className=" bg-background/95 backdrop-blur border-b p-4 hidden  md:flex items-center justify-center">
+        <main className="flex-1 max-w-2xl">
+            <div className="bg-background/95 backdrop-blur  p-4 hidden  md:flex items-center justify-center">
               <h1 className="text-xl font-bold">Pagina Inicial</h1>
             </div>
             {user && <CreatePost user={user} />}
