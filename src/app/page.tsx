@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth";
-import { SignIn } from "./components/signin-button";
-import { SignOut } from "./components/signout-button";
+import { SignIn } from "../components/signin-button";
+import { SignOut } from "../components/signout-button";
 
 export default async function Home() {
   const session = await auth();
