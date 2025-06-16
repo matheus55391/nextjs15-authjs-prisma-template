@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import { SignInCard } from "@/components/user/signin-button";
+import { SignInCard } from "@/components/user/signin-card";
 import { UserHeader } from "@/components/user/user-header";
 import { PostFormWrapper } from "@/components/post/post-form-wrapper";
 import { PostListWrapper } from "@/components/post/post-list-wrapper";
