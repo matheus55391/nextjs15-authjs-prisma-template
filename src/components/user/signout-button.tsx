@@ -1,6 +1,6 @@
 import { signOut } from "@/lib/auth";
 
-export function SignOut() {
+export function SignOut({ label = "Sair" }: { label?: string }) {
   return (
     <form
       action={async () => {
@@ -8,7 +8,7 @@ export function SignOut() {
         await signOut();
       }}
     >
-      <button type="submit">Sign Out</button>
+      <button type="submit">{label}</button>
     </form>
   );
 }

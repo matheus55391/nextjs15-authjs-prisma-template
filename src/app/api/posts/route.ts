@@ -1,16 +1,16 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 // GET /api/posts - Lista todos os posts
 export async function GET() {
-  try {
-    const posts = await prisma.post.findMany({
-      include: { author: true },
-    });
-    return NextResponse.json(posts);
-  } catch (error) {
-    return NextResponse.json({ error: 'Erro ao buscar posts' }, { status: 500 });
-  }
+  const posts = await prisma.post.findMany({ orderBy: { createdAt: 'desc' } });
+  return NextResponse.json(posts, {
+    headers: {
+      'x-nextjs-cache-tags': 'posts-list',
+    },
+  });
 }
 
 // POST /api/posts - Cria um novo post

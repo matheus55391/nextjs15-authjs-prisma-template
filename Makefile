@@ -33,3 +33,11 @@ start-production: ## Start the production docker container.
 .PHONY: stop-production
 stop-production: ## Stop the production docker container.
 	docker compose -f docker/production/compose.yaml down
+
+.PHONY: start-db
+start-db: ## Start the database (PostgreSQL) container.
+	docker compose -f docker/database/docker-compose.yml up -d
+
+.PHONY: stop-db
+stop-db: ## Stop the database (PostgreSQL) container.
+	docker compose -f docker/database/docker-compose.yml down
