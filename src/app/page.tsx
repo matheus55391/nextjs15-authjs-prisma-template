@@ -1,26 +1,13 @@
-import { auth } from "@/lib/auth";
-import { SignInCard } from "@/components/user/signin-card";
-import { UserHeader } from "@/components/user/user-header";
-import { PostFormWrapper } from "@/components/post/post-form-wrapper";
-import { PostListWrapper } from "@/components/post/post-list-wrapper";
 import { usePosts } from "@/hooks/use-posts";
+import { auth } from "@/lib/auth";
+import DashboardPage from "./dashboard/page";
 import LoginPage from "./login/page";
 
 export default async function Home() {
   const session = await auth();
-  const posts = await usePosts();
   if (session?.user) {
     return (
-      <div className="max-w-2xl mx-auto mt-10 p-6  rounded-lg shadow-md">
-        <UserHeader />
-        <div className="mb-4 flex justify-end">
-          {/* SignOut já está no UserHeader, pode remover daqui se duplicado */}
-        </div>
-        <div className="mb-6">
-          <PostFormWrapper />
-        </div>
-        <PostListWrapper posts={posts} />
-      </div>
+      <DashboardPage/> 
     )
   }
   return <LoginPage/>;

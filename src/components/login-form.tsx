@@ -1,9 +1,13 @@
-import { loginWithGithub, loginWithGoogle } from "@/app/login-actions"
 import { Button } from "@/components/ui/button"
+import { signIn } from "@/lib/auth"
 import { cn } from "@/lib/utils"
 import { GalleryVerticalEnd } from "lucide-react"
 
 export function LoginForm() {
+  const handleSignIn = async (provider: string) => {
+    'use server'
+    await signIn(provider, { callbackUrl: '/' })
+  }
   return (
     <div className={cn("flex flex-col gap-6")}>
       <div className="flex flex-col gap-6">
@@ -21,7 +25,7 @@ export function LoginForm() {
         </div>
         <div className="flex flex-col gap-3">
           <form
-            action={loginWithGithub}
+            action={handleSignIn.bind(null, 'github')}
             className="w-full mb-3"
           >
             <Button variant="outline" className="w-full">
@@ -35,7 +39,7 @@ export function LoginForm() {
             </Button>
           </form>
           <form
-            action={loginWithGoogle}
+             action={handleSignIn.bind(null, 'google')}
             className="w-full"
           >
             <Button variant="outline" className="w-full">
